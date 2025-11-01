@@ -3,7 +3,7 @@ MOD SQUAD Elite Specialty Squads
 Permanent deployment configuration for all environments
 """
 
-from . import alpha, bravo, charlie, delta, echo, foxtrot, sun_tzu, armani
+from . import alpha, armani, bravo, charlie, delta, echo, foxtrot, sun_tzu
 
 # Auto-activate ALPHA SQUAD on import (always-on services)
 alpha.activate()

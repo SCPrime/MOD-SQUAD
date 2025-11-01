@@ -81,20 +81,20 @@ extensions:
     batching: sequential
     auto_fix: false
     file_patterns:
-      - '**/*.py'
-      - '**/*.tsx'
-      - '**/*.ts'
-      - '**/*.js'
-      - '**/*.html'
+      - "**/*.py"
+      - "**/*.tsx"
+      - "**/*.ts"
+      - "**/*.js"
+      - "**/*.html"
     exclude_patterns:
-      - '**/node_modules/**'
-      - '**/__pycache__/**'
-      - '**/.next/**'
+      - "**/node_modules/**"
+      - "**/__pycache__/**"
+      - "**/.next/**"
     report_path: ../logs/run-history/copyright_scan.jsonl
   visibility_lockdown:
     enabled: true
     batching: sequential
-    repository: null  # Set to your GitHub org/repo (e.g., "yourorg/yourrepo")
+    repository: null # Set to your GitHub org/repo (e.g., "yourorg/yourrepo")
     checks:
       - repo_visibility
       - github_pages_status
@@ -117,7 +117,7 @@ extensions:
     batching: sequential
     cadence:
       timezone: UTC
-      cron: '0 1 * * *'
+      cron: "0 1 * * *"
     runs:
       - concealment_validator
       - copyright_scanner

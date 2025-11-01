@@ -20,18 +20,15 @@ ARMANI SQUAD  - Integration Weaving (<3% risk, on-demand) - Haute Couture Code I
 Universal preloaded work environment with 190+ modules available.
 """
 
+# Import all extensions for direct access
+# Import elite squads
+from . import extensions, squads
 from .universal_loader import (
     REGISTRY,
     UniversalModuleRegistry,
     get_registry,
     load_all,
 )
-
-# Import all extensions for direct access
-from . import extensions
-
-# Import elite squads
-from . import squads
 
 # Expose registry globally
 modules = REGISTRY
@@ -80,4 +77,3 @@ __all__ = [
     "pre_deploy_check",
     "squad_status",
 ]
-
