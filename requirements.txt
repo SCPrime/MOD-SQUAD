@@ -1,0 +1,7 @@
+# MOD SQUAD Framework - Python Dependencies
+# Copyright © 2025 Dr. SC Prime. All Rights Reserved.
+# PROPRIETARY AND CONFIDENTIAL
+
+PyYAML>=6.0
+requests>=2.31.0
+
