@@ -94,7 +94,7 @@ extensions:
   visibility_lockdown:
     enabled: true
     batching: sequential
-    repository: SCPrime/Pa-D-2mx
+    repository: null  # Set to your GitHub org/repo (e.g., "yourorg/yourrepo")
     checks:
       - repo_visibility
       - github_pages_status

@@ -20,19 +20,12 @@ ARMANI SQUAD  - Integration Weaving (<3% risk, on-demand) - Haute Couture Code I
 Universal preloaded work environment with 190+ modules available.
 """
 
-try:
-    from .universal_loader import (
-        REGISTRY,
-        UniversalModuleRegistry,
-        get_registry,
-        load_all,
-    )
-except ImportError:
-    # Fallback if universal_loader not available
-    REGISTRY = None
-    UniversalModuleRegistry = None
-    get_registry = None
-    load_all = None
+from .universal_loader import (
+    REGISTRY,
+    UniversalModuleRegistry,
+    get_registry,
+    load_all,
+)
 
 # Import all extensions for direct access
 from . import extensions
@@ -44,48 +37,32 @@ from . import squads
 modules = REGISTRY
 
 # Auto-activate ALPHA SQUAD (always-on services)
-try:
-    squads.alpha.activate()
-except Exception:
-    pass  # Graceful degradation if squads not available
+squads.alpha.activate()
 
 
 def list_all_modules():
     """List all available modules."""
-    if REGISTRY:
-        return REGISTRY.list_all()
-    return []
+    return REGISTRY.list_all()
 
 
 def get_module(name: str):
     """Get a specific module by name."""
-    if REGISTRY:
-        return REGISTRY.get(name)
-    return None
+    return REGISTRY.get(name)
 
 
 def deploy_full_stack(skip_slow=False):
     """Deploy all squads for full stack validation."""
-    try:
-        return squads.foxtrot.orchestrate_all(skip_slow=skip_slow)
-    except Exception:
-        return {"status": "error", "message": "Squads not available"}
+    return squads.foxtrot.orchestrate_all(skip_slow=skip_slow)
 
 
 def pre_deploy_check():
     """Run pre-deployment validation (BRAVO + CHARLIE)."""
-    try:
-        return squads.foxtrot.pre_deploy_check()
-    except Exception:
-        return {"status": "error", "message": "Squads not available"}
+    return squads.foxtrot.pre_deploy_check()
 
 
 def squad_status():
     """Get status of all squads."""
-    try:
-        return squads.status_all()
-    except Exception:
-        return {"status": "error", "message": "Squads not available"}
+    return squads.status_all()
 
 
 __version__ = "2.2.0"

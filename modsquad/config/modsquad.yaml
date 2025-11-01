@@ -4,7 +4,9 @@ modsquad:
   mode: non_interfering
   conductor:
     default_priority: balanced
-    allow_parallel_batches: false
+    allow_parallel_batches: true
+    max_concurrent_batches: 3
+    reviewer_mesh_enabled: true
   maintenance:
     config_path: ./maintenance_schedule.yaml
   quality_gates:
